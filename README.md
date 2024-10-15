@@ -8,7 +8,7 @@ The Courier Cost Calculator estimates parcel delivery costs based on user inputs
 
 ##Installation
 1. Clone the repository: git clone https://github.com/WothiSthamzin/courier-cost-calculator.git
-2. cd courier-calculator
+2. cd courier_calculator.py
 
 ##Usage
 1. Distance: Input the delivery distance in kilometers.
