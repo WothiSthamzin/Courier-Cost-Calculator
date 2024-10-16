@@ -5,6 +5,7 @@
 # Distance: The total distance of the delivery in kilometres. Use the distance input to calculate the Freight cost below.
 # Use variables, each with two options based on the user's choice:
 
+
 # Freight Cost Constants
 LAND_FREIGHT_COST = 0.25  # Cost per km for land freight
 AIR_FREIGHT_COST = 0.36   # Cost per km for air freight
@@ -24,8 +25,8 @@ STANDARD_DELIVERY_COST = 20.00
 POSTAGE_BOX_COST = 150.00
 PARCEL_SLEEVE_COST = 100.00
 
-
-user_input1 = int(input(" Hi. How far, in kilometres, from our office do want your Parcel delivered? "))
+# Get distance from user
+distance_km = int(input(" Hi. How far, in kilometres, from our office do want your Parcel delivered? "))
 print("The distance is:",user_input1,"km")
 print(" ")
 
@@ -39,7 +40,8 @@ else:
 
 # ==================
 
-user_input2 = input("Would you like Full Insurance for your Parcel: True or False ?").strip().capitalize()
+# Get approval for Full or Partial Insurance
+parcel_insurance = input("Would you like Full Insurance for your Parcel: True or False ?").strip().capitalize()
 if user_input2 == "True":
     insurance = FULL_INSURANCE_COST
     print("An additional R50.00 will added to Delivery Cost")
@@ -49,7 +51,9 @@ else:
 
 # ==================
 
-user_input3 = input("Would you like a Gift Cover for your Parcel? True or False ? ").strip().capitalize()
+
+# Get approval for Gift Cover
+gift_cover = input("Would you like a Gift Cover for your Parcel? True or False ? ").strip().capitalize()
 if user_input3 == "True":
     gift = GIFT_WRAP_COST
     print("An additional R15.00 will be added to your Parcel Delivery Cost")
@@ -61,7 +65,8 @@ else:
 
 # ==================
 
-user_input4 = input("Would you like Priority Delivery for your Parcel: True or False?").strip().capitalize()
+# Get approval for Priority or Standard Delivery
+priority_delivery = input("Would you like Priority Delivery for your Parcel: True or False?").strip().capitalize()
 if user_input4 == "True":
     priority = PRIORITY_DELIVERY_COST
     print("An additional R100.00 will be added to your Parcel Delivery Cost.")
@@ -71,7 +76,8 @@ else:
 
 # ==================
 
-user_input5 = input("Would you like a Postage Box for your Parcel: True or False ?").strip().capitalize()
+# Get approval for Postage Box or Parcel Sleeve
+postage_box = input("Would you like a Postage Box for your Parcel: True or False ?").strip().capitalize()
 if user_input5 == "True":
     parcel = POSTAGE_BOX_COST
     print("An additional R150.00 will be added to your Parcel Delivery Cost.")
@@ -81,6 +87,7 @@ else:
 
 # ==================
 
+# Total Cost for Delivery with Add-Ons
 total_cost = freight + insurance + gift + priority + parcel
 print("Your Total Delivery Cost will be: R", round(total_cost,2))
 
